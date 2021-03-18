@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS dangles_db;
+
+CREATE DATABASE dangles_db;
