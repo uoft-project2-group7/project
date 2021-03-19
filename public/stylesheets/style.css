@@ -6,10 +6,39 @@
     --tertiary-colour: #dfe4e8;
 }
 
+/* Header */
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background-color: var(--tertiary-colour);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+nav {
+    border: 1px solid var (var(--secondary-colour));
+}
+
+nav a {
+    display: inline-block;
+    padding: 5px;
+    transition: 0.5s;
+    margin-inline: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+nav a:hover {
+    background-color: var(--primary-colour);
+}
+
 /* Main */
+
 main {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 20px 5% 20px 5%;
 }
 
 /* Cards */
@@ -24,7 +53,7 @@ main {
     border: 1px solid var(--secondary-colour);
     border-radius: 15px;
     box-shadow: 1px 1px var(--secondary-colour);
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .card:hover {
