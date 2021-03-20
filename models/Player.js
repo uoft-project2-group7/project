@@ -23,17 +23,7 @@ Player.init(
     position: {
       type: DataTypes.STRING(3),
       allowNull: false
-    },
-    goals: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
-    },
-    assists: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
-    }
+    }   
   },
   {
     sequelize,
