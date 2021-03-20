@@ -4,29 +4,29 @@
 const User = require("./User");
 const Team = require("./Team");
 const Player = require("./Player");
-const Goalie = require("./Goalie");
+const Goalies = require("./Goalies");
 
-// //User to Team association
-// User.hasOne(Team, {
-//   foreignKey: 'user_id'
-// });
+//User to Team association
+User.hasOne(Team, {
+  foreignKey: 'user_id'
+});
 
-// Team.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
+Team.belongsTo(User, {
+  foreignKey: 'user_id'
+});
 
-// //Player to Team Associations
+//Player to Team Associations
 
-// Team.hasMany(Player);
+Team.hasMany(Player);
 
-// Player.belongsTo(Team, {
-// });
+Player.belongsTo(Team, {
+});
 
-// //Goalie associations
-// Team.hasOne(Goalie);
+//Goalie associations
+Team.hasOne(Goalies);
 
-// Goalie.belongsTo(Team);
+Goalies.belongsTo(Team);
 
 
 
-module.exports = { User, Team, Player, Goalie };
+module.exports = { User, Team, Player, Goalies };
