@@ -53,7 +53,7 @@ Team.init(
     goalie: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'goalie',
+        model: 'goalies',
         key: 'id'
       }
     },
