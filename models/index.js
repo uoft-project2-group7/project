@@ -26,11 +26,6 @@ Player.belongsToMany(Team, {
   foreignKey: 'player_id'
 });
 
-// //Goalie associations
-// Team.hasOne(Goalies);
-
-// Goalies.belongsTo(Team);
-
 
 
 module.exports = { User, Team, Player, TeamPlayers };
