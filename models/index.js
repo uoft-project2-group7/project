@@ -4,7 +4,7 @@
 const User = require("./User");
 const Team = require("./Team");
 const Player = require("./Player");
-const Goalie = require("./Goalie");
+const Goalies = require("./Goalies");
 
 //User to Team association
 User.hasOne(Team, {
@@ -23,10 +23,10 @@ Player.belongsTo(Team, {
 });
 
 //Goalie associations
-Team.hasOne(Goalie);
+Team.hasOne(Goalies);
 
-Goalie.belongsTo(Team);
+Goalies.belongsTo(Team);
 
 
 
-module.exports = { User, Team, Player, Goalie };
+module.exports = { User, Team, Player, Goalies };
