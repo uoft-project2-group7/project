@@ -1,9 +1,23 @@
-/* Theme Colours */
+/* Theme */
 
 :root {
     --primary-colour: #f29c39;
     --secondary-colour: #8ea0aa;
     --tertiary-colour: #dfe4e8;
+}
+
+h2 {
+    color: var(--primary-colour);
+    font-size: 1.5rem;
+}
+
+.content-block {
+    border: 1px solid var(--secondary-colour);
+    border-radius: 15px;
+    box-shadow: 1px 1px var(--secondary-colour);
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 20px;
 }
 
 /* Header */
@@ -15,6 +29,7 @@ header {
     background-color: var(--tertiary-colour);
     padding-left: 5%;
     padding-right: 5%;
+    margin-bottom: 20px;
 }
 
 nav {
@@ -38,7 +53,27 @@ nav a:hover {
 /* Main */
 
 main {
-    margin: 20px 5% 20px 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Homepage */
+
+.homepage-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 15px 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    border: 1px solid var(--secondary-colour);
+    border-radius: 15px;
+    box-shadow: 1px 1px var(--secondary-colour);
+}
+
+#warning-no-team {
+    background-color: lightcoral;
 }
 
 /* Cards */
@@ -50,12 +85,30 @@ main {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     border: 1px solid var(--secondary-colour);
     border-radius: 15px;
     box-shadow: 1px 1px var(--secondary-colour);
     transition: 0.5s;
+    align-items: center;
 }
 
 .card:hover {
     background-color: var(--tertiary-colour);
+}
+
+.card-score {
+    font-size: 1.5rem;
+    color: var(--primary-colour);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background-color: var(--tertiary-colour);
+    font-size: 1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
