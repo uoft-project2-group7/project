@@ -1,12 +1,11 @@
 // HUB TO ACCESS ALL MODELS
-// example:
 
 const User = require("./User");
 const Team = require("./Team");
 const Player = require("./Player");
-const Goalie = require("./Goalie");
+const TeamPlayers = require("./TeamPlayers");
 
-//User to Team association
+//User has one Team association
 User.hasOne(Team, {
   foreignKey: 'user_id'
 });
@@ -15,18 +14,18 @@ Team.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-//Player to Team Associations
+//Teams have many Players Association
 
-Team.hasMany(Player);
-
-Player.belongsTo(Team, {
+Team.belongsToMany(Player, {
+  through: TeamPlayers,
+  foreignKey: 'team_id'
 });
 
-//Goalie associations
-Team.hasOne(Goalie);
+Player.belongsToMany(Team, {
+  through: TeamPlayers,
+  foreignKey: 'player_id'
+});
 
-Goalie.belongsTo(Team);
 
 
-
-module.exports = { User, Team, Player, Goalie };
+module.exports = { User, Team, Player, TeamPlayers };

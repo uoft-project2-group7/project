@@ -53,7 +53,7 @@ Team.init(
     goalie: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'goalie',
+        model: 'player',
         key: 'id'
       }
     },
@@ -69,6 +69,7 @@ Team.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
+    timestamps: false,
     modelName: 'team'
   }
 );

@@ -3,7 +3,7 @@
 const express = require("express");
 const sequelize = require("./config/connection");
 const path = require("path");
-// const routes = require("./controllers"); commented out to run server as not defined at this time
+const routes = require("./controllers");
 // const helpers = require("./utils/helpers");  commented out to run server as not defined at this time
 
 //HANDLEBARS
@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 3001;
 // -------- MIDDLEWARE  --------
 
 //SESSION
-// app.use(session(sess)); // commented out to run server at this time as not in use.
+app.use(session(sess));
 
 // HANDLEBARS
 // handlebars set as the default template engine
@@ -45,7 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // TURN ON ROUTES
-// app.use(routes); commented out ro run server as not defined at the moment.
+app.use(routes);
 
 // TURN ON CONNECTION TO DB AND SERVER
 sequelize.sync({ force: false }).then(() => {
