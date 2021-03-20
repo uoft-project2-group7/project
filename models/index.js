@@ -1,5 +1,4 @@
 // HUB TO ACCESS ALL MODELS
-// example:
 
 const User = require("./User");
 const Team = require("./Team");
