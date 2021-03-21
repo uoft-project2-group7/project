@@ -9,29 +9,27 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>
-                <a href="/">Dangle</a>
-            </h1>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/">Leaderboard</a>
-                {{#if loggedIn}}
-                <a href="/">Profile Page</a>
-                <button id="logout" class="btn-no-style">Logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer>
-            Thanks for visiting!
-        </footer>
-    </div>
+    <header>
+        <h1>
+            <a href="/"><img src="../../public/images/logo.png"></a>
+        </h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/">Leaderboard</a>
+            {{#if loggedIn}}
+            <a href="/">Profile</a>
+            <a href="/">Logout</a>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
+        </nav>
+    </header>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer>
+        © Dangles. All rights reserved. This site is not affiliated NHL or any of its associates.
+    </footer>
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
