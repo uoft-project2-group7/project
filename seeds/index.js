@@ -9,7 +9,7 @@ const seedAll = async () => {
   await seedUsers();
   console.log('\n----- PLAYER DATA SEEDED -----\n');
   await seedPlayers();
-  console.log('\n----- PLAYER DATA SEEDED -----\n');
+  console.log('\n----- USER DATA SEEDED -----\n');
 
   process.exit(0);
 };

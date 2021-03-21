@@ -14,10 +14,11 @@
 </div>
 <div class="homepage-wrapper">
     <div class="card-wrapper">
-        {{#each username}}
-        
-            {{> team-card username}}
-        
+        {{#each teams as |team|}}
+        {{> team-card team}}
         {{/each}}
+    </div>
+    <div class="sidebar">
+        <p style="text-align: center;">Oh wow a sidebar</p>
     </div>
 </div>

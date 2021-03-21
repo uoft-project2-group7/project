@@ -6,7 +6,7 @@ const { Player, Team, TeamPlayers, User } = require('../models');
 
 router.get('/', (req, res) => {
   console.log('======================');
-  Post.findAll({
+  User.findAll({
     attributes: [
       'id',
       'username'
@@ -18,9 +18,9 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      const teams = dbPostData.map(post => post.get({ plain: true }));
-
+    .then(dbTeamData => {
+      const teams = dbTeamData.map(teams => teams.get({ plain: true }));
+      
       res.render('home', {
         teams,
         loggedIn: req.session.loggedIn
