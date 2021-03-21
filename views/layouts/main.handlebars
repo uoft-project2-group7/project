@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dangles</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <h1>
-                <a href="/">Dangle</a>
-            </h1>
+            <div class="our-logo">
+                 <img src="/images/logo.png" alt="our-logo">
+            </div>
             <nav>
                 <a href="/">Home</a>
-                <a href="/">Leaderboard</a>
+                <a href="/leaderboard">Leaderboard</a>
                 {{#if loggedIn}}
-                <a href="/">Profile Page</a>
+                <a href="/profile-page">Profile Page</a>
                 <button id="logout" class="btn-no-style">Logout</button>
                 {{else}}
-                <a href="/login">Login</a>
+                <a href="login">Login</a>
                 {{/if}}
             </nav>
         </header>
