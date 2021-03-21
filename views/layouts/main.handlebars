@@ -9,19 +9,18 @@
 </head>
 
 <body>
-    <div class="wrapper">
         <header>
-            <div class="our-logo">
-                 <img src="/images/logo.png" alt="our-logo">
-            </div>
+            <a href="/">
+                 <img src="./images/logo.png" alt="Dangles Logo">
+            </a>
             <nav>
                 <a href="/">Home</a>
                 <a href="/leaderboard">Leaderboard</a>
                 {{#if loggedIn}}
-                <a href="/profile-page">Profile Page</a>
-                <button id="logout" class="btn-no-style">Logout</button>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
                 {{else}}
-                <a href="login">Login</a>
+                <a href="login">Login/Signup</a>
                 {{/if}}
             </nav>
         </header>
@@ -29,9 +28,8 @@
             {{{ body }}}
         </main>
         <footer>
-            Thanks for visiting!
+            © Dangles 2021. All rights reserved. This site is not affiliated NHL or any of its associates.
         </footer>
-    </div>
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
