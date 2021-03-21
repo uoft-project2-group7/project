@@ -20,6 +20,11 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      {
+        model: Player,
+        through: TeamPlayers,
+        attributes: ["nhl_id", "full_name", "position"],
+      },
     ],
   })
     .then((dbPostData) => res.json(dbPostData))
@@ -37,6 +42,17 @@ router.get("/:id", (req, res) => {
       // equal to SELECT * FROM users WHERE id = 1
       id: req.params.id,
     },
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+      {
+        model: Player,
+        through: TeamPlayers,
+        attributes: ["nhl_id", "full_name", "position"],
+      },
+    ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {
