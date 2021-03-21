@@ -11,4 +11,8 @@ router.get("/profile-page", function(req, res) {
   res.render("profile-page")
 });
 
+router.get("/login", function(req, res) {
+  res.render("login")
+});
+
 module.exports = router

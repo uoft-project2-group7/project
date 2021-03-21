@@ -1,88 +1,61 @@
-* {
-  margin: 0;
-  padding: 0;
+/* Theme Colours */
+
+:root {
+  --primary-colour: #f29c39;
+  --secondary-colour: #8ea0aa;
+  --tertiary-colour: #dfe4e8;
 }
 
-/* .wrapper {
+/* Header */
+
+header {
   display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: .2fr 1.5fr 1.2fr .8fr;
-} */
-
-
-
-
-#head-bar {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: .5fr .2fr ;
-  /* background-image: url("/images/nhl_hockey.jpg"); */
-  /* opacity: 0.3; */
-  /* background-position: center;
-  background-repeat: no-repeat; */
-
-}
-
-
-.logs {
-  
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  display: flex;
-  justify-content: space-evenly;
+  grid-template-columns: 1fr auto;
   align-items: center;
+  background-color: var(--tertiary-colour);
+  padding-left: 5%;
+  padding-right: 5%;
 }
-  
-  .logo {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
 
-  /* .dangle-title {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    display: flex;
-   grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 1;
-  }
-  */
-/* 
-.dangle-subtitle {
-  grid-column-start: -3;
-  grid-column-end: -2;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-
-
-.navbar {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 2;
+nav {
+  border: 1px solid var (var(--secondary-colour));
 }
+
+nav a {
+  display: inline-block;
+  padding: 5px;
+  transition: 0.5s;
+  margin-inline: 5px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+}
+
+nav a:hover {
+  background-color: var(--primary-colour);
+}
+
+/* Main */
 
 main {
-  background-color: rgb(20, 102, 102);
+  margin: 20px 5% 20px 5%;
 }
 
-footer {
-  background-color: rgb(91, 112, 112);
+/* Cards */
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px 10px;
+}
+
+.card {
+  border: 1px solid var(--secondary-colour);
+  border-radius: 15px;
+  box-shadow: 1px 1px var(--secondary-colour);
+  transition: 0.5s;
+}
+
+.card:hover {
+  background-color: var(--tertiary-colour);
 }
