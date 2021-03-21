@@ -5,23 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dangles</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
         <header>
-            <h1>
-                <a href="/">Dangle</a>
-            </h1>
+            <a href="/">
+                 <img src="./images/logo.png" alt="Dangles Logo">
+            </a>
             <nav>
                 <a href="/">Home</a>
-                <a href="/">Leaderboard</a>
+                <a href="/leaderboard">Leaderboard</a>
                 {{#if loggedIn}}
-                <a href="/">Profile Page</a>
-                <button id="logout" class="btn-no-style">Logout</button>
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
                 {{else}}
-                <a href="/login">Login</a>
+                <a href="login">Login/Signup</a>
                 {{/if}}
             </nav>
         </header>
@@ -29,9 +28,8 @@
             {{{ body }}}
         </main>
         <footer>
-            Thanks for visiting!
+            © Dangles 2021. All rights reserved. This site is not affiliated NHL or any of its associates.
         </footer>
-    </div>
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>

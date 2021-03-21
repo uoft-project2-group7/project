@@ -1,0 +1,170 @@
+/* Theme */
+
+:root {
+    --primary-colour: #f29c39;
+    --secondary-colour: #8ea0aa;
+    --tertiary-colour: #dfe4e8;
+}
+
+body {
+    background-image: url(../images/dark_wood.png);
+    background-repeat: repeat;
+    color: var(--tertiary-colour);
+}
+
+h2 {
+    color: var(--primary-colour);
+    font-size: 1.5rem;
+}
+
+.content-block {
+    border: 1px solid var(--secondary-colour);
+    border-radius: 15px;
+    box-shadow: 1px 1px var(--secondary-colour);
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 20px;
+}
+
+/* Header */
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 20px;
+}
+
+nav {
+    border: 1px solid var (var(--secondary-colour));
+}
+
+nav a {
+    display: inline-block;
+    padding: 5px;
+    transition: 0.5s;
+    margin-inline: 5px;
+    text-decoration: none;
+    color: var(--primary-colour);
+    font-size: 1.5rem;
+}
+
+nav a:hover {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+/* Main */
+
+main {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Homepage */
+
+.homepage-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 15px 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    border: 1px solid var(--secondary-colour);
+    border-radius: 15px;
+    box-shadow: 1px 1px var(--secondary-colour);
+}
+
+#warning-no-team {
+    background-color: darkred;
+}
+
+/* Cards */
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--secondary-colour);
+    border-radius: 15px;
+    box-shadow: 1px 1px var(--secondary-colour);
+    transition: 0.5s;
+    align-items: center;
+}
+
+.card:hover {
+    background-color: var(--secondary-colour);
+    color: black;
+}
+
+.card-score {
+    font-size: 1.5rem;
+    color: var(--primary-colour);
+}
+
+/* Login */
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid var(--tertiary-colour);
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--primary-colour);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.5s;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.login-wrapper {
+    display: flex;
+    height: 70vh;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tertiary-colour);
+    opacity: 0.95;
+    padding: 20px;
+    width: 100%;
+    color: black;
+}
+
+.login-form * {
+    margin-bottom: 20px;
+}
+
+.form-wrapper {
+    height: 100%;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background-color: var(--primary-colour);
+    font-size: 1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+}
