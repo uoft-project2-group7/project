@@ -20,6 +20,11 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      {
+        model: Player,
+        through: TeamPlayers,
+        attributes: ["nhl_id", "full_name", "position"],
+      },
     ],
   })
     .then((dbPostData) => res.json(dbPostData))
