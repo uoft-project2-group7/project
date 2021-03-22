@@ -153,26 +153,22 @@ button:hover {
 }
 
 .login-wrapper {
-    display: flex;
-    height: 70vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px 10px;
+    background-color: var(--tertiary-colour);
+    opacity: 0.95;
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
-    background-color: var(--tertiary-colour);
-    opacity: 0.95;
     padding: 20px;
-    width: 100%;
     color: black;
 }
 
 .login-form * {
     margin-bottom: 20px;
-}
-
-.form-wrapper {
-    height: 100%;
 }
 
 /* Footer */
