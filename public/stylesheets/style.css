@@ -110,6 +110,23 @@ main {
     color: var(--primary-colour);
 }
 
+/* Profile - Create a Team */
+
+.profile-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px 10px;
+    margin-bottom: 20px;
+}
+
+#name-input {
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid var(--tertiary-colour);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
 /* Login */
 
 input[type=text], input[type=password], input[type=email] {
