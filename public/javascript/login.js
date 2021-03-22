@@ -1,3 +1,5 @@
+const { format } = require("sequelize/types/lib/utils");
+
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -16,6 +18,7 @@ async function loginFormHandler(event) {
 
     if (response.ok) {
       document.location.replace('/home');
+      form.reset();
     } else {
       alert(response.statusText);
     }
