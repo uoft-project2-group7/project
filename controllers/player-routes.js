@@ -7,22 +7,23 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
   console.log('======================');
-  User.findAll({
+  Player.findAll({
     attributes: [
       'id',
-      'username'
+      'full_name',
+      'position'
     ],
     include: [
       {
-        model: Team,
-        attributes: ['id', 'team_name', 'center', 'user_id']
+        model: Player,
+        attributes: ['id', 'full_name', 'position', 'user_id']
       }
     ]
   })
     .then(dbTeamData => {
       const teams = dbTeamData.map(teams => teams.get({ plain: true }));
       
-      res.render('home', {
+      res.render('profile-page', {
         teams,
         loggedIn: req.session.loggedIn
       });
@@ -34,32 +35,33 @@ router.get('/', withAuth, (req, res) => {
 });
 
 // get six random teams
-router.get('/team/:id', (req, res) => {
+router.get('/player/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
       'id',
-      'username'
+      'full_name',
+      'position'
     ],
     include: [
       {
-        model: Team,
-        attributes: ['id', 'team_name', 'center', 'user_id']
+        model: Player,
+        attributes: ['id', 'full_name', 'position', 'user_id']
       }
     ]
   })
     .then(dbTeamData => {
       if (!dbTeamData) {
-        res.status(404).json({ message: 'No team found with this id' });
+        res.status(404).json({ message: 'No player found with this id' });
         return;
       }
 
       // const post = dbPostData.get({ plain: true });
       const card = dbPostData.get;
 
-      res.render('card', {
+      res.render('player-card', {
         card,
         // loggedIn: req.session.loggedIn
       });
