@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const { User, Team, Player, TeamPlayers } = require("../../models");
+const withAuth = require('../../utils/auth');
 
 // GET route to find all teams
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Team.findAll({
     attributes: [
       "id",
@@ -36,7 +37,7 @@ router.get("/", (req, res) => {
 
 // GET route to find single team
 
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Team.findOne({
     where: {
       // equal to SELECT * FROM users WHERE id = 1
@@ -68,7 +69,7 @@ router.get("/:id", (req, res) => {
 });
 
 // Post route to create a team
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Team.create({
     team_name: req.body.team_name,
     center: req.body.center,

@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { TeamPlayers } = require("../../models");
+const withAuth = require('../../utils/auth')
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   TeamPlayers.findAll({})
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -10,7 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   TeamPlayers.create({
     team_id: req.body.team_id,
     player_id: req.body.player_id,
