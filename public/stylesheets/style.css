@@ -103,6 +103,7 @@ main {
 .card:hover {
     background-color: var(--secondary-colour);
     color: black;
+    cursor: pointer;
 }
 
 .card-score {
