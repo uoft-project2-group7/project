@@ -32,6 +32,8 @@ router.get('/', (req, res) => {
     });
 });
 
+
+
 // get six random teams
 router.get('/team/:id', (req, res) => {
   Post.findOne({

@@ -20,11 +20,11 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbTeamData => {
-      const teams = dbTeamData.map(teams => teams.get({ plain: true }));
+    .then(dbPlayerData => {
+      const players = dbPlayerData.map(players => players.get({ plain: true }));
       
-      res.render('profile-page', {
-        teams,
+      res.render('profile', {
+        players,
         loggedIn: req.session.loggedIn
       });
     })
@@ -52,17 +52,17 @@ router.get('/player/:id', (req, res) => {
       }
     ]
   })
-    .then(dbTeamData => {
-      if (!dbTeamData) {
+    .then(dbPlayerData => {
+      if (!dbPlayerData) {
         res.status(404).json({ message: 'No player found with this id' });
         return;
       }
 
       // const post = dbPostData.get({ plain: true });
-      const card = dbPostData.get;
+      const player = dbPostData.get;
 
       res.render('player-card', {
-        card,
+        player,
         // loggedIn: req.session.loggedIn
       });
     })
