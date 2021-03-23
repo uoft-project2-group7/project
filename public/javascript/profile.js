@@ -20,6 +20,8 @@ const nameFormHandler = () => {
     printInstructions(stepNum);
 }
 
+const 
+
 document.addEventListener("DOMContentLoaded", function () {
     printInstructions(stepNum);
 });
