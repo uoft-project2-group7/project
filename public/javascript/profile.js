@@ -7,7 +7,7 @@ const stepText = [
     'Select your second DEFENDER',
     'Select your GOALIE'
 ];
-let stepNum = 0;
+let stepNum = -1;
 let selection = [];
 
 const printInstructions = () => {
@@ -22,7 +22,7 @@ const nameFormHandler = () => {
 }
 
 const cardSelectHandler = () => {
-    alert('it worked');
+    printInstructions();
     if (document.getElementById('c-selection').style.display === "grid") {
         document.getElementById('c-selection').style.display = "none";
         document.getElementById('rw-selection').style.display = "grid"
@@ -53,8 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('#g-selection').style.display = "none";
 });
 
+let cards = document.getElementsByClassName('card');
 for (let i = 0; i < cards.length; i++) {
-    document.getElementsByClassName('card')[i].addEventListener('click', cardSelectHandler);
+    cards[i].addEventListener('click', cardSelectHandler);
 }
 
 document.querySelector('#submit-name').addEventListener('click', nameFormHandler);
