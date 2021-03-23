@@ -16,12 +16,14 @@ const printInstructions = () => {
 }
 
 const nameFormHandler = () => {
+    selection.push(document.querySelector('#name-input').value);
     document.querySelector('#name-form').style.display = "none";
     printInstructions();
     document.querySelector('#c-selection').style.display = "grid";
 }
 
-const cardSelectHandler = () => {
+const cardSelectHandler = (playerId) => {
+    selection.push(playerId);
     printInstructions();
     if (document.getElementById('c-selection').style.display === "grid") {
         document.getElementById('c-selection').style.display = "none";
@@ -43,6 +45,10 @@ const cardSelectHandler = () => {
     }
 }
 
+const postData = () => {
+    
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     printInstructions(stepNum);
     document.querySelector('#c-selection').style.display = "none";
@@ -53,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('#g-selection').style.display = "none";
 });
 
-let cards = document.getElementsByClassName('card');
-for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', cardSelectHandler);
-}
+// let cards = document.getElementsByClassName('card');
+// for (let i = 0; i < cards.length; i++) {
+//     cards[i].addEventListener('click', cardSelectHandler);
+// }
 
 document.querySelector('#submit-name').addEventListener('click', nameFormHandler);
