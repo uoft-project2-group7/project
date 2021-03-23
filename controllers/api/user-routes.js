@@ -3,7 +3,7 @@ const { User } = require("../../models");
 const withAuth = require('../../utils/auth')
 
 // GET all users: /api/users
-router.get("/", withAuth, (req, res) => {
+router.get("/", (req, res) => {
   User.findAll({
     attributes: { exclude: ["password"] }, // Hides password data
   })
@@ -15,7 +15,7 @@ router.get("/", withAuth, (req, res) => {
 });
 
 // Get single user: api/users/:id
-router.get("/:id", withAuth, (req, res) => {
+router.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
     where: {
@@ -37,7 +37,7 @@ router.get("/:id", withAuth, (req, res) => {
 });
 
 // POST to create new user: /api/users
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     password: req.body.password,

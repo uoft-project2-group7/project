@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const { Player } = require("../../models");
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
-router.get("/", withAuth, (req, res) => {
+router.get("/", (req, res) => {
   Player.findAll({})
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
