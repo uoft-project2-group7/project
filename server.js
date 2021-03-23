@@ -2,6 +2,7 @@
 
 const express = require("express");
 const sequelize = require("./config/connection");
+const favicon = require('serve-favicon')
 const path = require("path");
 const routes = require("./controllers");
 // const helpers = require("./utils/helpers");  commented out to run server as not defined at this time
@@ -26,6 +27,7 @@ const sess = {
 };
 
 const app = express();
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 const PORT = process.env.PORT || 3001;
 
 // -------- MIDDLEWARE  --------
