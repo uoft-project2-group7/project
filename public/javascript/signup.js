@@ -20,11 +20,13 @@ async function signupFormHandler(event) {
     // check the response status
     if (response.ok) {
       console.log('success');
-      document.location.replace('/home');
+      alert('new user created');
+      document.location.replace('/');
     } else {
+      alert('create failed');
       alert(response.statusText);
     }
   }
 }
 
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
