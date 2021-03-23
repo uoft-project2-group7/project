@@ -113,10 +113,13 @@ main {
 /* Profile - Create a Team */
 
 .profile-wrapper {
+    margin-bottom: 20px;
+}
+
+.select-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 15px 10px;
-    margin-bottom: 20px;
 }
 
 #name-input {

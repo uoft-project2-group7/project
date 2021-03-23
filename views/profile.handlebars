@@ -5,33 +5,33 @@
         <input type="text" id="name-input" placeholder="Enter your fantasy name." name="name-input">
         <button type="button" id="submit-name">Submit</button>
     </form>
-    <div class="profile-wrapper">
-        <div id="c-selection">
+    <div class="profile-wrapper ">
+        <div class="select-wrapper" id="c-selection">
             {{#each C as |c|}}
             {{> selection-card c}}
             {{/each}}
         </div>
-        <div id="rw-selection">
+        <div class="select-wrapper" id="rw-selection">
             {{#each RW as |rw|}}
             {{> selection-card rw}}
             {{/each}}
         </div>
-        <div id="lw-selection">
+        <div class="select-wrapper" id="lw-selection ">
             {{#each LW as |lw|}}
             {{> selection-card lw}}
             {{/each}}
         </div>
-        <div id="d1-selection">
+        <div class="select-wrapper" id="d1-selection ">
             {{#each D as |d|}}
             {{> selection-card d}}
             {{/each}}
         </div>
-        <div id="d2-selection">
+        <div class="select-wrapper" id="d2-selection ">
             {{#each D as |d|}}
             {{> selection-card d}}
             {{/each}}
         </div>
-        <div id="g-selection">
+        <div class="select-wrapper" id="g-selection ">
             {{#each G as |g|}}
             {{> selection-card g}}
             {{/each}}

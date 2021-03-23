@@ -6,7 +6,7 @@ const stepText = [
     'Select your first DEFENDER',
     'Select your second DEFENDER',
     'Select your GOALIE'
-]
+];
 let stepNum = 0;
 let selection = [];
 
@@ -19,8 +19,6 @@ const nameFormHandler = () => {
     stepNum++;
     printInstructions(stepNum);
 }
-
-const 
 
 document.addEventListener("DOMContentLoaded", function () {
     printInstructions(stepNum);
