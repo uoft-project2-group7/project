@@ -10,20 +10,15 @@ const stepText = [
 let stepNum = 0;
 let selection = [];
 
-const printInstructions = (step) => {
-    document.querySelector('#creation-select').textContent = stepText[step];
+const printInstructions = () => {
+    stepNum++;
+    document.querySelector('#creation-select').textContent = stepText[stepNum];
 }
 
 const nameFormHandler = () => {
     document.querySelector('#name-form').style.display = "none";
-    stepNum++;
-    printInstructions(stepNum);
+    printInstructions();
     document.querySelector('#c-selection').style.display = "grid";
-
-    let cards = document.getElementsByClassName('card');
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener('click', cardSelectHandler);
-    }
 }
 
 const cardSelectHandler = () => {
@@ -57,5 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('#d2-selection').style.display = "none";
     document.querySelector('#g-selection').style.display = "none";
 });
+
+for (let i = 0; i < cards.length; i++) {
+    document.getElementsByClassName('card')[i].addEventListener('click', cardSelectHandler);
+}
 
 document.querySelector('#submit-name').addEventListener('click', nameFormHandler);
