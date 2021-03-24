@@ -1,8 +1,7 @@
-<section class="card">
+<section class="card" id="{{team.nhl_id}}">
     <h2>{{team_name}}</h2>
     <p class="team-owner">{{user.username}}</p>
-    <p class="card-score">41</p>
-    {{#each players}}
-    <p>{{position}} - {{full_name}} {{playerStats nhl_id}}</p>
-    {{/each}}    
+    <p class="card-score">0</p>
+    <p>Goals - <span class="stats-goals">0</span></p>
+    <p>Assists - <span class="stats-assists">0</span></p>   
 </section>
