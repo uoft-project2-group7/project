@@ -46,7 +46,19 @@ const cardSelectHandler = (playerId) => {
 }
 
 const postData = () => {
-    
+    fetch('/api/teams', {
+        method: 'post',
+        body: JSON.stringify({
+            "team_name": selection[0],
+            "center": selection[1],
+            "right_wing": selection[2],
+            "left_wing": selection[3],
+            "dman1": selection[4],
+            "dman2": selection[5],
+            "goalie": selection[6]
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -58,10 +70,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('#d2-selection').style.display = "none";
     document.querySelector('#g-selection').style.display = "none";
 });
-
-// let cards = document.getElementsByClassName('card');
-// for (let i = 0; i < cards.length; i++) {
-//     cards[i].addEventListener('click', cardSelectHandler);
-// }
 
 document.querySelector('#submit-name').addEventListener('click', nameFormHandler);

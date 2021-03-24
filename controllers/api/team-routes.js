@@ -77,7 +77,7 @@ router.post("/", (req, res) => {
     dman1: req.body.dman1,
     dman2: req.body.dman2,
     goalie: req.body.goalie,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
