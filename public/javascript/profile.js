@@ -57,8 +57,10 @@ const postData = () => {
             "dman2": selection[5],
             "goalie": selection[6]
         }),
-        headers: { 'Content-Type': 'application/json' }
-    });
+        headers: { 'Content-Type': 'application/json' }    
+    })
+    
+    
     document.location.replace('/');
 }
 

@@ -2,7 +2,7 @@
 
 const express = require("express");
 const sequelize = require("./config/connection");
-const favicon = require('serve-favicon')
+const favicon = require('serve-favicon');
 const path = require("path");
 const routes = require("./controllers");
 const helpers = require("./utils/helpers");  //commented out to run server as not defined at this time
