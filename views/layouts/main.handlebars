@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dangles</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
@@ -16,6 +18,8 @@
             <nav>
                 <a href="/">Home</a>
                 <a href="/leaderboard">Leaderboard</a>
+                {{!-- Remove Profile when done --}}
+                <a href="/profile">Profile</a>
                 {{#if loggedIn}}
                 <a href="/profile">Profile</a>
                 <a href="/" id="logout">Logout</a>

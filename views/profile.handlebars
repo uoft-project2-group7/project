@@ -1,24 +1,42 @@
-{{#if loggedIn}}
-<div class="content-block" id="warning-no-team">
-    <p>
-        Before you start playing and seeing where you rank, make sure to visit your <a href="#">Profile Page</a> to
-        select the players that will score you big this fantasy season!
-    </p>
-</div>
-{{/if}}
+<h1>Profile</h1>
 <div class="content-block">
-    <p>
-        Welcome to <span class="dangles">Dangles</span>. Take a brave step into the world of Fantasy NHL Hockey by
-        making your ideal team and seeing how they stack up against other fans!
-    </p>
-</div>
-<div class="homepage-wrapper">
-    <div class="card-wrapper">
-        {{#each players as |player|}}
-        {{> player-card player}}
-        {{/each}}
+    <h2><span id="creation-select"></span></h2>
+    <form id="name-form">
+        <input type="text" id="name-input" placeholder="Enter your fantasy name." name="name-input">
+        <button type="button" id="submit-name">Submit</button>
+    </form>
+    <div class="profile-wrapper ">
+        <div class="select-wrapper" id="c-selection">
+            {{#each C as |c|}}
+            {{> selection-card c}}
+            {{/each}}
+        </div>
+        <div class="select-wrapper" id="rw-selection">
+            {{#each RW as |rw|}}
+            {{> selection-card rw}}
+            {{/each}}
+        </div>
+        <div class="select-wrapper" id="lw-selection">
+            {{#each LW as |lw|}}
+            {{> selection-card lw}}
+            {{/each}}
+        </div>
+        <div class="select-wrapper" id="d1-selection">
+            {{#each D as |d|}}
+            {{> selection-card d}}
+            {{/each}}
+        </div>
+        <div class="select-wrapper" id="d2-selection">
+            {{#each D as |d|}}
+            {{> selection-card d}}
+            {{/each}}
+        </div>
+        <div class="select-wrapper" id="g-selection">
+            {{#each G as |g|}}
+            {{> selection-card g}}
+            {{/each}}
+        </div>
     </div>
-    <div class="sidebar">
-        <p style="text-align: center;">Oh wow a sidebar</p>
-    </div>
 </div>
+
+<script src="./javascript/profile.js"></script>
