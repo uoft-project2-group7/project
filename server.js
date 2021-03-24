@@ -4,12 +4,12 @@ const express = require("express");
 const sequelize = require("./config/connection");
 const path = require("path");
 const routes = require("./controllers");
-// const helpers = require("./utils/helpers");  commented out to run server as not defined at this time
+const helpers = require("./utils/helpers");  //commented out to run server as not defined at this time
 
 //HANDLEBARS
 
 const exphbs = require("express-handlebars");
-const hbs = exphbs.create({}); // helpers:  removed from inside brackets to run server as no helpers created
+const hbs = exphbs.create({ helpers }); // helpers:  removed from inside brackets to run server as no helpers created
 
 //SESSION
 
