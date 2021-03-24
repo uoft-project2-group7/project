@@ -11,13 +11,16 @@ router.get('/', (req, res) => {
       'id',
       'username'
     ],
+   
     include: [
       {
         model: Team,
         attributes: ['id', 'team_name', 'center', 'user_id']
+        
       }
     ]
   })
+  
     .then(dbTeamData => {
       const teams = dbTeamData.map(teams => teams.get({ plain: true }));
       

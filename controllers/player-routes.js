@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Player, Team, TeamPlayers, User } = require('../models');
-// const withAuth = require('../utils/auth');
+
 
 // get team cards for homepage
 
@@ -19,11 +19,12 @@ router.get('/', (req, res) => {
         attributes: ['id', 'full_name', 'position', 'user_id']
       }
     ]
+    
   })
     .then(dbPlayerData => {
       const players = dbPlayerData.map(players => players.get({ plain: true }));
       
-      res.render('profile', {
+      res.render('player-card', {
         players,
         loggedIn: req.session.loggedIn
       });
