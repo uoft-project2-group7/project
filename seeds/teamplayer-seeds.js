@@ -73,4 +73,4 @@ const TPData = [
 
 const seedTeamPlayers = () => TeamPlayers.bulkCreate(TPData);
 
-module.export = seedTeamPlayers;
+module.exports = seedTeamPlayers;
