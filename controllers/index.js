@@ -10,6 +10,7 @@ router.use('/', homeRoutes);
 router.use('/profile', profileRoutes);
 router.use("/api", apiRoutes);
 
+
 router.use((req, res) => {
   res.status(404).end();
 });

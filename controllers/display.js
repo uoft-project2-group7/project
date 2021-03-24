@@ -7,8 +7,8 @@ router.get("/leaderboard", function(req, res) {
   res.render("leaderboard")
 });
 
-router.get("/profile-page", function(req, res) {
-  res.render("profile-page")
+router.get("/profile", function(req, res) {
+  res.render("profile")
 });
 
 router.get("/login", function(req, res) {

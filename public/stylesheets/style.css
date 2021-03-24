@@ -78,6 +78,10 @@ main {
     box-shadow: 1px 1px var(--secondary-colour);
 }
 
+  .future {
+    font-family: 'Architects Daughter', cursive;
+  }
+
 #warning-no-team {
     background-color: darkred;
 }

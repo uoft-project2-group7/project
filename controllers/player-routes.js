@@ -2,31 +2,30 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Player, Team, TeamPlayers, User } = require('../models');
 
+
 // get team cards for homepage
 
 router.get('/', (req, res) => {
   console.log('======================');
-  Team.findAll({
-    attributes:['team_name', 'center', 'right_wing', 'left_wing', 'dman1', 'dman2', 'goalie'],
+  Player.findAll({
+    attributes: [
+      'id',
+      'full_name',
+      'position'
+    ],
     include: [
       {
-        model: User,
-        //attributes: ['id', 'team_name', 'center', 'user_id']
-
-      },
-      {
         model: Player,
-        through: TeamPlayers,
-        attributes: ["nhl_id", "full_name", "position"],
+        attributes: ['id', 'full_name', 'position', 'user_id']
       }
     ]
+    
   })
-  
-    .then(dbTeamData => {
-      const teams = dbTeamData.map(teams => teams.get({ plain: true }));
+    .then(dbPlayerData => {
+      const players = dbPlayerData.map(players => players.get({ plain: true }));
       
-      res.render('home', {
-        teams,
+      res.render('player-card', {
+        players,
         loggedIn: req.session.loggedIn
       });
     })
@@ -36,36 +35,35 @@ router.get('/', (req, res) => {
     });
 });
 
-
-
 // get six random teams
-router.get('/team/:id', (req, res) => {
+router.get('/player/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
       'id',
-      'username'
+      'full_name',
+      'position'
     ],
     include: [
       {
-        model: Team,
-        attributes: ['id', 'team_name', 'center', 'user_id']
+        model: Player,
+        attributes: ['id', 'full_name', 'position', 'user_id']
       }
     ]
   })
-    .then(dbTeamData => {
-      if (!dbTeamData) {
-        res.status(404).json({ message: 'No team found with this id' });
+    .then(dbPlayerData => {
+      if (!dbPlayerData) {
+        res.status(404).json({ message: 'No player found with this id' });
         return;
       }
 
       // const post = dbPostData.get({ plain: true });
-      const card = dbPostData.get;
+      const player = dbPostData.get;
 
-      res.render('card', {
-        card,
+      res.render('player-card', {
+        player,
         // loggedIn: req.session.loggedIn
       });
     })
