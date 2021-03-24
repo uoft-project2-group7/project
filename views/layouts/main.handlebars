@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangles</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+        <header>
+            <a href="/">
+                 <img src="./images/logo.png" alt="Dangles Logo">
+            </a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/leaderboard">Leaderboard</a>
+                {{!-- Remove Profile when done --}}
+                {{#if loggedIn}}
+                <a href="/profile">Profile</a>
+                <a href="/" id="logout">Logout</a>
+                {{else}}
+                <a href="/login">Login/Signup</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            © Dangles 2021. All rights reserved. This site is not affiliated NHL or any of its associates.
+        </footer>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>

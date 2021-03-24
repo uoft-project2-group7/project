@@ -1,0 +1,11 @@
+<section class="card" id="{{team.nhl_id}}">
+    <h2>{{team_name}}</h2>
+    <p class="team-owner">{{user.username}}</p>
+    <p class="card-score">0</p>
+    {{#each players}}
+    <p>{{position}} - {{full_name}}</p>
+    {{/each}}
+    <br>
+    <p>Total Goals - <span class="stats-goals">0</span></p>
+    <p>Total Assists - <span class="stats-assists">0</span></p>   
+</section>
