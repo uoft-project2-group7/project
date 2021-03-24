@@ -101,13 +101,34 @@ main {
 }
 
 .card:hover {
-  background-color: var(--secondary-colour);
-  color: black;
+    background-color: var(--secondary-colour);
+    color: black;
+    cursor: pointer;
 }
 
 .card-score {
   font-size: 1.5rem;
   color: var(--primary-colour);
+}
+
+/* Profile - Create a Team */
+
+.profile-wrapper {
+    margin-bottom: 20px;
+}
+
+.select-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px 10px;
+}
+
+#name-input {
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid var(--tertiary-colour);
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 /* Login */
