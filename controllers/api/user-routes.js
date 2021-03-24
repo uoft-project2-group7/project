@@ -40,7 +40,7 @@ router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     password: req.body.password,
-    email: req.body.email,
+    email: req.body.email
   }).then((dbUserData) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
@@ -57,7 +57,7 @@ router.post("/login", (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
-      email: req.body.email,
+      username: req.body.username,
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
