@@ -59,6 +59,7 @@ const postData = () => {
         }),
         headers: { 'Content-Type': 'application/json' }
     });
+    document.location.replace('/');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
