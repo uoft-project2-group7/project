@@ -107,8 +107,9 @@ main {
 }
 
 .card-score {
-  font-size: 1.5rem;
-  color: var(--primary-colour);
+    visibility: hidden;
+    font-size: 1.5rem;
+    color: var(--primary-colour);
 }
 
 /* Profile - Create a Team */
