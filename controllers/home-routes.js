@@ -6,17 +6,18 @@ const { Player, Team, TeamPlayers, User } = require('../models');
 
 router.get('/', (req, res) => {
   console.log('======================');
-  User.findAll({
-    attributes: [
-      'id',
-      'username'
-    ],
-   
+  Team.findAll({
+    attributes:['team_name', 'center', 'right_wing', 'left_wing', 'dman1', 'dman2', 'goalie'],
     include: [
       {
-        model: Team,
-        attributes: ['id', 'team_name', 'center', 'user_id']
-        
+        model: User,
+        //attributes: ['id', 'team_name', 'center', 'user_id']
+
+      },
+      {
+        model: Player,
+        through: TeamPlayers,
+        attributes: ["nhl_id", "full_name", "position"],
       }
     ]
   })
