@@ -68,7 +68,8 @@ const TPData = [
   {
     team_id: 3,
     player_id: 29
-  }
+  },
+  { team_id: 2, player_id: 22 }
 ]
 
 const seedTeamPlayers = () => TeamPlayers.bulkCreate(TPData);
