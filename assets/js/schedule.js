@@ -1,28 +1,41 @@
-
-var getNhlSchedule = function() {
+var getNhlSchedule = function () {
   const apiUrl = "https://statsapi.web.nhl.com/api/v1/schedule";
-  fetch(apiUrl).then(function(response){
-  response.json().then(function(data) {
-    let totalgames = data.dates[0].games[2].teams;
-    let awayteam = totalgames.away.team.name; 
-    let hometeam = totalgames.home.team.name;
-    let scoreaway = totalgames.away.score;
-    let scorehome = totalgames.home.score;
+  fetch(apiUrl).then(function (response) {
+    response.json().then(function (data) {
+        let games = data.dates[0].games;
+        var i;
+        for (i = 0; i < games.length; i++) {
 
-    console.log(totalgames);
-    console.log(awayteam);
-    console.log(hometeam);
-    console.log(scoreaway);
-    console.log(scorehome);
-    document.getElementById('future1').innerHTML = awayteam;
-  }) 
+          let todaygames = data.dates[0];
+          let awayteam = todaygames.games[i].teams.away.team.name;
+          let hometeam = todaygames.games[i].teams.home.team.name;
+          let scoreaway = todaygames.games[i].teams.away.score;
+          let scorehome = todaygames.games[i].teams.home.score;
 
-  .catch((err) => {
-    console.log(err);
-  })
-    
+          console.log(games);
+          console.log(todaygames);
+          console.log(awayteam);
+          console.log(hometeam);
+          console.log(scoreaway);
+          console.log(scorehome);
+          document.getElementById('future1').innerHTML = awayteam[i]+ " @ " + hometeam; 
+        }
+        
+
+      })
+
+      .catch((err) => {
+        console.log(err);
+      })
+
   });
-  
+
   console.log("outside");
 }
+
+const displayRepos = function(repos, searchTerm) {
+
+}
+
+
 getNhlSchedule();
