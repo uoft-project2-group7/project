@@ -58,7 +58,7 @@ Team.init(
       }
     },
     team_score: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.DECIMAL,
       allowNull: false,
       defaultValue: 0
     },
