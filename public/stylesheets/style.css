@@ -73,6 +73,8 @@ main {
 }
 
 .sidebar {
+    display: grid;
+    justify-content: center;
     border: 1px solid var(--secondary-colour);
     border-radius: 15px;
     box-shadow: 1px 1px var(--secondary-colour);
