@@ -14,6 +14,7 @@ Team.belongsTo(User, {
   foreignKey: "user_id",
 });
 
+
 //Teams have many Players Association
 
 Team.belongsToMany(Player, {

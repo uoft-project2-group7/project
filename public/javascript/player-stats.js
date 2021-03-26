@@ -10,6 +10,6 @@ const playerStats = playerdata => {
       
       console.log(stats);
       return stats;
-  } catch (error) {
-    console.log(error);
-  }      
+  } //catch (error) {
+    //console.log(error);
+  //}      

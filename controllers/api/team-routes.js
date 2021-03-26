@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
       "dman1",
       "dman2",
       "goalie",
+      "team_score"
     ],
     include: [
       {
@@ -22,7 +23,7 @@ router.get("/", (req, res) => {
       },
       {
         model: Player,
-        through: TeamPlayers,
+        //through: TeamPlayers,
         attributes: ["nhl_id", "full_name", "position"],
       },
     ],
