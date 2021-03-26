@@ -14,7 +14,7 @@ router.get("/:id", (req, res) => {
   Player.findOne({
     where: {
       
-      id: req.params.id,
+      nhl_id: req.params.id,
     },
   })
     .then((dbUserData) => {
