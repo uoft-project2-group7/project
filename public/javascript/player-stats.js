@@ -13,8 +13,8 @@ const updateStats = async () => {
               let saves = statData.stats[0].splits[0].stat.saves; //get saves for stat2 column
               let goalsAgainst = statData.stats[0].splits[0].stat.goalsAgainst; //goals against for stat3
               let shutouts = statData.stats[0].splits[0].stat.shutouts; // shutouts for stat4
-              console.log(`got stats for ${data[i].full_name}`);
-              console.log(`wins: ${wins}`);
+              //console.log(`got stats for ${data[i].full_name}`);
+              //console.log(`wins: ${wins}`);
               let updateurl = `/api/players/${nhlId}`;
 
               //sends the put request to the correct spot but is returning 404 error
@@ -33,14 +33,43 @@ const updateStats = async () => {
                 //document.location.reload();
                 console.log(`${nhlId} updated`)                
               } else {
-                alert('Player not updated' + response.statusText);
+                alert('Player not updated ' + response.statusText);
+              }
+            })
+          })
+        } else {
+          let nhlId = data[i].nhl_id;
+          let apiUrl = 'https://statsapi.web.nhl.com/api/v1/people/'+ nhlId +'/stats?stats=statsSingleSeason&season=20202021';
+          await fetch(apiUrl).then(async function(response) {
+            await response.json().then(async function(statData) {
+              let goals = statData.stats[0].splits[0].stat.goals; //get wins for stat1 column
+              let assists = statData.stats[0].splits[0].stat.assists; //get saves for stat2 column              
+              //console.log(`got stats for ${data[i].full_name}`);
+              //console.log(`wins: ${wins}`);
+              let updateurl = `/api/players/${nhlId}`;
+
+              //sends the put request to the correct spot but is returning 404 error
+              const response = await fetch((updateurl), {
+                method: 'put',
+                body: JSON.stringify({
+                  stat1: goals,
+                  stat2: assists         
+                }),
+                headers: { 'Content-Type': 'application/json' }
+              });
+
+              if (response.ok) {
+                //document.location.reload();
+                console.log(`${nhlId} updated`)                
+              } else {
+                alert('Player not updated ' + response.statusText);
               }
             })
           })
         }
       }
-    })  
-  })
+    })
+  })  
 }
 
 updateStats();
