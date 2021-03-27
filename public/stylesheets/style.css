@@ -1,194 +1,226 @@
 /* Theme */
 
 :root {
-    --primary-colour: #f29c39;
-    --secondary-colour: #8ea0aa;
-    --tertiary-colour: #dfe4e8;
+  --primary-colour: #f29c39;
+  --secondary-colour: #8ea0aa;
+  --tertiary-colour: #dfe4e8;
 }
 
 body {
-    background-image: url(../images/dark_wood.png);
-    background-repeat: repeat;
-    color: var(--tertiary-colour);
+  background-image: url(../images/dark_wood.png);
+  background-repeat: repeat;
+  color: var(--tertiary-colour);
 }
 
 h2 {
-    color: var(--primary-colour);
-    font-size: 1.5rem;
+  color: var(--primary-colour);
+  font-size: 1.5rem;
 }
 
 .content-block {
-    border: 1px solid var(--secondary-colour);
-    border-radius: 15px;
-    box-shadow: 1px 1px var(--secondary-colour);
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-bottom: 20px;
+  border: 1px solid var(--secondary-colour);
+  border-radius: 15px;
+  box-shadow: 1px 1px var(--secondary-colour);
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 20px;
 }
 
 /* Header */
 
 header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 20px;
 }
 
 nav {
-    border: 1px solid var (var(--secondary-colour));
+  border: 1px solid var (var(--secondary-colour));
 }
 
 nav a {
-    display: inline-block;
-    padding: 5px;
-    transition: 0.5s;
-    margin-inline: 5px;
-    text-decoration: none;
-    color: var(--primary-colour);
-    font-size: 1.5rem;
+  display: inline-block;
+  padding: 5px;
+  transition: 0.5s;
+  margin-inline: 5px;
+  text-decoration: none;
+  color: var(--primary-colour);
+  font-size: 1.5rem;
 }
 
 nav a:hover {
-    font-size: 2rem;
-    font-weight: bolder;
+  font-size: 2rem;
+  font-weight: bolder;
 }
 
 /* Main */
 
 main {
-    margin-left: 5%;
-    margin-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* Homepage */
 
 .homepage-wrapper {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 15px 10px;
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 15px 10px;
+  margin-bottom: 20px;
 }
 
 .sidebar {
-    display: grid;
-    justify-content: center;
-    border: 1px solid var(--secondary-colour);
-    border-radius: 15px;
-    box-shadow: 1px 1px var(--secondary-colour);
+  display: grid;
+  justify-content: center;
+  border: 1px solid var(--secondary-colour);
+  border-radius: 15px;
+  box-shadow: 1px 1px var(--secondary-colour);
 }
 
-  .future {
-    font-family: 'Architects Daughter', cursive;
-  }
+.future {
+  font-family: 'Architects Daughter', cursive;
+}
 
 #warning-no-team {
-    background-color: darkred;
+  background-color: darkred;
 }
 
 /* Cards */
 
 .card-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px 10px;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--secondary-colour);
-    border-radius: 15px;
-    box-shadow: 1px 1px var(--secondary-colour);
-    transition: 0.5s;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--secondary-colour);
+  border-radius: 15px;
+  box-shadow: 1px 1px var(--secondary-colour);
+  transition: 0.5s;
+  align-items: center;
 }
 
 .card:hover {
-    background-color: var(--secondary-colour);
-    color: black;
-    cursor: pointer;
+  background-color: var(--secondary-colour);
+  color: black;
+  cursor: pointer;
 }
 
 .card-score {
-    visibility: hidden;
-    font-size: 1.5rem;
-    color: var(--primary-colour);
+  visibility: hidden;
+  font-size: 1.5rem;
+  color: var(--primary-colour);
 }
 
 /* Profile - Create a Team */
 
 .profile-wrapper {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .select-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 15px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 15px 10px;
 }
 
 #name-input {
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid var(--tertiary-colour);
-    box-sizing: border-box;
-    margin-bottom: 20px;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid var(--tertiary-colour);
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 /* Login */
 
-input[type=text], input[type=password], input[type=email] {
-    width: 100%;
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid var(--tertiary-colour);
-    box-sizing: border-box;
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid var(--tertiary-colour);
+  box-sizing: border-box;
 }
 
 button {
-    background-color: var(--primary-colour);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    transition: 0.5s;
+  background-color: var(--primary-colour);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.5s;
 }
 
 button:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .login-wrapper {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 15px 10px;
-    background-color: var(--tertiary-colour);
-    opacity: 0.95;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px 10px;
+  background-color: var(--tertiary-colour);
+  opacity: 0.95;
 }
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: black;
 }
 
 .login-form * {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* Footer */
 
 footer {
-    text-align: center;
-    background-color: var(--primary-colour);
-    font-size: 1rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: black;
+  text-align: center;
+  background-color: var(--primary-colour);
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: black;
+}
+
+.score-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.score-table th {
+  font-size: large;
+}
+
+.score-table td, .score-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.score-table tr:nth-child(even) {
+  background-color: var(--secondary-colour);
+}
+
+.score-table tr:hover {
+  opacity: 0.7;
+  color: var(--primary-colour)
+}
+
+.score-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--primary-colour);
+  color: white;
 }
