@@ -80,11 +80,59 @@ router.post("/", (req, res) => {
     goalie: req.body.goalie,
     user_id: req.session.user_id,
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbPostData) => {        
+      let newTeamPlayerData = [
+        {
+          team_id: dbPostData.id,
+          player_id: dbPostData.center
+        },
+        {
+          team_id: dbPostData.id,
+          player_id: dbPostData.right_wing
+        },
+        {
+          team_id: dbPostData.id,
+          player_id: dbPostData.left_wing
+        },
+        {
+          team_id: dbPostData.id,
+          player_id: dbPostData.dman1
+        },
+        {
+          team_id: dbPostData.id,
+          player_id: dbPostData.dman2
+        },
+        {
+          team_id: dbPostData.id,
+          player_id: dbPostData.goalie
+        }
+      ];
+      TeamPlayers.bulkCreate(newTeamPlayerData);
+      res.json(dbPostData)})
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
+
+router.delete('/:id', (req, res) => {
+  Team.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No team found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 
 module.exports = router;

@@ -19,7 +19,7 @@ const updateStats = async () => {
 
               //sends the put request to the correct spot but is returning 404 error
               const response = await fetch((updateurl), {
-                method: 'POST',
+                method: 'put',
                 body: JSON.stringify({
                   stat1: wins,
                   stat2: saves,
