@@ -49,7 +49,6 @@ const doMath = async (team, i) => {
                 returnedScore = await getPoints(d2Points.nhl_id);
                 x += returnedScore[0];
                 y += returnedScore[1];
-                console.log(x + "   " + y);
                 return resolve([x, y]);
             });
         });
@@ -63,6 +62,7 @@ const asyncCall = async () => {
                 result = await doMath(team, i);
                 document.getElementsByClassName('stats-goals')[i].innerText = result[0];
                 document.getElementsByClassName('stats-assists')[i].innerText = result[1];
+                document.getElementsByClassName('card-score')[i].innerText = result[0] * 3 + result[1] * 2;
             }
         });
     });
