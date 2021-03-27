@@ -19,43 +19,48 @@ Team.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'player',
-        key: 'id'
+        key: 'nhl_id'
       }
     },
     right_wing: {
       type: DataTypes.INTEGER,
       references: {
         model: 'player',
-        key: 'id'
+        key: 'nhl_id'
       }
     },
     left_wing: {
       type: DataTypes.INTEGER,
       references: {
         model: 'player',
-        key: 'id'
+        key: 'nhl_id'
       }
     },
     dman1: {
       type: DataTypes.INTEGER,
       references: {
         model: 'player',
-        key: 'id'
+        key: 'nhl_id'
       }
     },
     dman2: {
       type: DataTypes.INTEGER,
       references: {
         model: 'player',
-        key: 'id'
+        key: 'nhl_id'
       }
     },
     goalie: {
       type: DataTypes.INTEGER,
       references: {
         model: 'player',
-        key: 'id'
+        key: 'nhl_id'
       }
+    },
+    team_score: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      defaultValue: 0
     },
     user_id: {
       type: DataTypes.INTEGER,
