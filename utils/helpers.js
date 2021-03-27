@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-
 module.exports = { 
   playerStats: async playerdata => {
     let apiUrl = 'https://statsapi.web.nhl.com/api/v1/people/'+ playerdata +'/stats?stats=statsSingleSeason&season=20202021';
