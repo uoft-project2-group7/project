@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
       },
       {
         model: Player,
-        through: TeamPlayers,
+        //through: TeamPlayers,
         attributes: ["nhl_id", "full_name", "position"],
       }
     ]
@@ -84,7 +84,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.put('/players/:id', (req, res) => {
+router.put('/player/:id', (req, res) => {
   Player.update(
     {
       stat1: req.body.stat1,
