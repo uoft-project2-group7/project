@@ -7,8 +7,8 @@ var getNhlSchedule = function () {
         for (i = 0; i < games.length; i++) {
 
           let todayGames = data.dates[0];
-          let awayTeam = todayGames.games[i].teams.away.team.name;
-          let homeTeam = todayGames.games[i].teams.home.team.name;
+          let awayTeam = todayGames.games[i].teams.away.team.name.split(' ').slice(-1).join(' ');
+          let homeTeam = todayGames.games[i].teams.home.team.name.split(' ').slice(-1).join(' ');
           let scoreAway = todayGames.games[i].teams.away.score;
           let scoreHome = todayGames.games[i].teams.home.score;
 
