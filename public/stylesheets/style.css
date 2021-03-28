@@ -73,14 +73,16 @@ main {
 }
 
 .sidebar {
+  display: grid;
+  justify-content: center;
   border: 1px solid var(--secondary-colour);
   border-radius: 15px;
   box-shadow: 1px 1px var(--secondary-colour);
 }
 
-  .future {
-    font-family: 'Architects Daughter', cursive;
-  }
+.future {
+  font-family: 'Architects Daughter', cursive;
+}
 
 #warning-no-team {
   background-color: darkred;
@@ -105,42 +107,40 @@ main {
 }
 
 .card:hover {
-    background-color: var(--secondary-colour);
-    color: black;
-    cursor: pointer;
+  background-color: var(--secondary-colour);
+  color: black;
+  cursor: pointer;
 }
 
 .card-score {
-    visibility: hidden;
-    font-size: 1.5rem;
-    color: var(--primary-colour);
+  visibility: hidden;
+  font-size: 1.5rem;
+  color: var(--primary-colour);
 }
 
 /* Profile - Create a Team */
 
 .profile-wrapper {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .select-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 15px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 15px 10px;
 }
 
 #name-input {
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid var(--tertiary-colour);
-    box-sizing: border-box;
-    margin-bottom: 20px;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid var(--tertiary-colour);
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 /* Login */
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
+input[type="text"], input[type="password"], input[type="email"] {
   width: 100%;
   padding: 12px 20px;
   display: inline-block;
@@ -199,11 +199,10 @@ footer {
 }
 
 .score-table th {
-    font-size: large;
+  font-size: large;
 }
 
-.score-table td,
-.score-table th {
+.score-table td, .score-table th {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
@@ -225,4 +224,3 @@ footer {
   background-color: var(--primary-colour);
   color: white;
 }
-
