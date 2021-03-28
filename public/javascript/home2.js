@@ -19,37 +19,35 @@ const getPoints = async (nhlId) => {
 
 const doMath = async (team, i) => {
     return new Promise(async resolve => {
-        console.log('check');
         await fetch('/api/players').then((response) => {
             let returnedScore;
             let x = 0;
             let y = 0;
             response.json().then(async (players) => {
-                let cPoints = players.find(obj => { return obj.id === team[i].center });
-                returnedScore = await getPoints(cPoints.nhl_id);
+                let cPoints = team[i].center;
+                returnedScore = await getPoints(cPoints);
                 x += returnedScore[0];
                 y += returnedScore[1];
-                let rwPoints = players.find(obj => { return obj.id === team[i].right_wing });
-                getPoints(rwPoints.nhl_id);
-                returnedScore = await getPoints(rwPoints.nhl_id);
+
+                let rwPoints = team[i].right_wing;
+                returnedScore = await getPoints(rwPoints);
                 x += returnedScore[0];
                 y += returnedScore[1];
-                let lwPoints = players.find(obj => { return obj.id === team[i].left_wing });
-                getPoints(lwPoints.nhl_id);
-                returnedScore = await getPoints(lwPoints.nhl_id);
+
+                let lwPoints = team[i].left_wing;
+                returnedScore = await getPoints(lwPoints);
                 x += returnedScore[0];
                 y += returnedScore[1];
-                let d1Points = players.find(obj => { return obj.id === team[i].dman1 });
-                getPoints(d1Points.nhl_id);
-                returnedScore = await getPoints(d1Points.nhl_id);
+
+                let d1Points = team[i].dman1;
+                returnedScore = await getPoints(d1Points);
                 x += returnedScore[0];
                 y += returnedScore[1];
-                let d2Points = players.find(obj => { return obj.id === team[i].dman2 });
-                getPoints(d2Points.nhl_id);
-                returnedScore = await getPoints(d2Points.nhl_id);
+
+                let d2Points = team[i].dman2;
+                returnedScore = await getPoints(d2Points);
                 x += returnedScore[0];
                 y += returnedScore[1];
-                console.log(x + "   " + y);
                 return resolve([x, y]);
             });
         });
@@ -63,6 +61,7 @@ const asyncCall = async () => {
                 result = await doMath(team, i);
                 document.getElementsByClassName('stats-goals')[i].innerText = result[0];
                 document.getElementsByClassName('stats-assists')[i].innerText = result[1];
+                document.getElementsByClassName('card-score')[i].innerText = result[0] * 3 + result[1] * 2;
             }
         });
     });
