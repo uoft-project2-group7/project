@@ -42,20 +42,20 @@ NHL API
 
 Home page displays all created teams including: Name, Username, Players, Points and Assist totals.
 
-![All Teams](./public/images/teams.png)
+![All Teams](https://user-images.githubusercontent.com/74839893/112784463-ce08c800-901f-11eb-8250-794fc7eccdb4.png)
 
 Signup and Login Page.
 
-![Login/Signup](./public/images/login-signup.png)
+![Login/Signup](https://user-images.githubusercontent.com/74839893/112784477-d6610300-901f-11eb-8a5b-a06c2ed7e88d.png)
 
 How a user's team is created:
 
-![Create Team Name](./public/images/Dangles.gif)
+![Create Team Name](https://user-images.githubusercontent.com/74839893/112785543-35c01280-9022-11eb-879f-ad88234b7af3.gif)
 
 
 Leaderboard page displays team scores in order from most points to least.
 
-![Leader Board](./public/images/leaderboard.png)
+![Leader Board](https://user-images.githubusercontent.com/74839893/112784563-fd1f3980-901f-11eb-9307-adb341d96a79.png)
 
 ## Deployed-Url:
 https://intense-headland-44008.herokuapp.com/
