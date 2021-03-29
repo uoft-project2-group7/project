@@ -11,12 +11,6 @@ router.get('/', (req, res) => {
       'nhl_id',
       'full_name',
       'position'
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ['team_created']
-      }
     ]
   })
     .then(dbPlayerData => {
@@ -32,8 +26,7 @@ router.get('/', (req, res) => {
         LW,
         D,
         G,
-        loggedIn: req.session.loggedIn,
-        team_created
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {

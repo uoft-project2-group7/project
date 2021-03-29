@@ -55,13 +55,11 @@ const postData = () => {
             "left_wing": selection[3],
             "dman1": selection[4],
             "dman2": selection[5],
-            "goalie": selection[6],
-            "team_created": true
+            "goalie": selection[6]
         }),
-        headers: { 'Content-Type': 'application/json' }    
+        headers: { 'Content-Type': 'application/json' }
     })
-    
-    
+
     document.location.replace('/');
 }
 

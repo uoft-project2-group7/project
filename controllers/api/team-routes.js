@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
       "dman1",
       "dman2",
       "goalie",
-      "team_score"
+      "team_score",
     ],
     include: [
       {
