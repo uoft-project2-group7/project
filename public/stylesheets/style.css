@@ -86,6 +86,12 @@ main {
   font-family: 'Architects Daughter', cursive;
 }
 
+#currentDay{
+  font-family: 'Architects Daughter', cursive;
+  color: var(--primary-colour);
+  border-bottom: 1px solid var(--primary-colour);
+}
+
 #list_id {
   display: flex;
   flex-direction: column;
