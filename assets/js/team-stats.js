@@ -16,18 +16,23 @@ fetch(apiUrl).then(function (response) {
       fetch(`https://statsapi.web.nhl.com/api/v1/teams/${teamsId}/stats`).then(function (response) {
         return response.json()
       }).then(function (stats) {
-         let teamStats = stats.stats.splits.stat;
+         let teamStats = stats.stats[0].splits[0].stat;
+         teamWins = teamStats.wins;
+         teamLosses = teamStats.losses;
+         teamPoints = teamStats.pts;
+         teamGaAgainst = teamStats.goalsPerGame;
+         teamGaFor = teamStats.goalsPerGame;
 
-        console.log(teamStats);
+        console.log(teamGaFor);
       })
 
       // let teamsId = teams.id;
 
 
-      let homeTeamEl = document.createElement("li");
-      homeTeamEl.innerHTML = awayTeam + " " + scoreAway + "  " + "@" + "  " + scoreHome + "  " + homeTeam;
-      let gamesTonight = document.querySelector('#game-card');
-      gamesTonight.appendChild(homeTeamEl);
+      // let homeTeamEl = document.createElement("li");
+      // homeTeamEl.innerHTML = awayTeam + " " + scoreAway + "  " + "@" + "  " + scoreHome + "  " + homeTeam;
+      // let gamesTonight = document.querySelector('#game-card');
+      // gamesTonight.appendChild(homeTeamEl);
 
 
 
