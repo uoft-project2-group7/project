@@ -48,29 +48,10 @@ Signup and Login Page.
 
 ![Login/Signup](./public/images/login-signup.png)
 
-Team name is required before selecting players.
+How a user's team is created:
 
-![Create Team Name](./public/images/teamname.png)
+![Create Team Name](./public/images/Dangles.gif)
 
-User selects from "Center Postion" options.
-
-![Pick Center](./public/images/pickcenter.png)
-
-User selects from "Left Wing Postion" options.
-
-![Pick Left Wing](./public/images/pickleftwing.png)
-
-User selects from "Right Wing Postion" options.
-
-![Pick Right Wing](./public/images/pickrightwing.png)
-
-User selects from "Defender Postion" options.
-
-![Pick Defender](./public/images/pickdefender.png)
-
-User selects from "Goalie Postion" options.
-
-![Pick Goalie](./public/images/pickgoalie.png)
 
 Leaderboard page displays team scores in order from most to least.
 
