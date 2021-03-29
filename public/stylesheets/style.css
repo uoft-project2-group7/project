@@ -73,15 +73,33 @@ main {
 }
 
 .sidebar {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--secondary-colour);
   border-radius: 15px;
   box-shadow: 1px 1px var(--secondary-colour);
+  transition: 0.5s;
+  align-items: center;
 }
 
 .future {
   font-family: 'Architects Daughter', cursive;
+}
+
+#list_id {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  margin-top: 2rem;
+  border: 1px solid var(--secondary-colour);
+  border-radius: 15px;
+  box-shadow: 1px 1px var(--secondary-colour);
+  transition: 0.5s;
+  align-items: center;
+}
+
+#game-card {
+  margin-top: 2rem;
 }
 
 #warning-no-team {
