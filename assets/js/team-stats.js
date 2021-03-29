@@ -1,3 +1,5 @@
+//  THIS FILE IS FOR FUTURE UPGRADES TO THE SIDE BAR TODAY'S GAMES
+
 // const { format } = require("sequelize/types/lib/utils");
 
 var getNhlteams = function () {
