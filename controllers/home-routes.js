@@ -24,10 +24,12 @@ router.get('/', (req, res) => {
   
     .then(dbTeamData => {
       const teams = dbTeamData.map(teams => teams.get({ plain: true }));
+      const G = dbTeamData.filter(i => 'G'.includes(i.position)).map(x => x.get({ plain: true }));
       
       res.render('home', {
         teams,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        G
       });
     })
     .catch(err => {

@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
       'nhl_id',
       'full_name',
       'position'
-    ]
+    ],
   })
     .then(dbPlayerData => {
       let C = dbPlayerData.filter(i => 'C'.includes(i.position)).map(x => x.get({ plain: true }));
