@@ -248,3 +248,12 @@ footer {
   background-color: var(--primary-colour);
   color: white;
 }
+
+@media only screen and (max-width: 768px) {
+  
+.card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px 10px;
+}
+}
