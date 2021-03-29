@@ -34,10 +34,6 @@ User.init(
       validate: {
         len: [4]
       }
-    },
-    team_created: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
     }
   },
   {

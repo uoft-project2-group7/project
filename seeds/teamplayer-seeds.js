@@ -3,76 +3,73 @@ const { TeamPlayers } = require('../models');
 const TPData = [
   {
     team_id: 1,
-    player_id: 8478402
+    player_id: 1
   },
   {
     team_id: 1,
-    player_id: 8475913
+    player_id: 8
   },
   {
     team_id: 1,
-    player_id: 8477940
+    player_id: 13
   },
   {
     team_id: 1,
-    player_id: 8474590
+    player_id: 19
   },
   {
     team_id: 1,
-    player_id: 8480800
+    player_id: 20
   },
   {
     team_id: 1,
-    player_id: 8475831
+    player_id: 27
   },
   {
     team_id: 2,
-    player_id: 8476460
+    player_id: 3
   },
   {
     team_id: 2,
-    player_id: 8474141
+    player_id: 6
   },
   {
     team_id: 2,
-    player_id: 8473419
+    player_id: 12
   },
   {
     team_id: 2,
-    player_id: 8475197
+    player_id: 17
   },
   {
     team_id: 2,
-    player_id: 8474563
-  },
-  {
-    team_id: 2,
-    player_id: 8470594
+    player_id: 28
   },
   {
     team_id: 3,
-    player_id: 8479318
+    player_id: 4
   },
   {
     team_id: 3,
-    player_id: 8478483
+    player_id: 7
   },
   {
     team_id: 3,
-    player_id: 8476456
+    player_id: 11
   },
   {
     team_id: 3,
-    player_id: 8475197
+    player_id: 16
   },
   {
     team_id: 3,
-    player_id: 8476853
+    player_id: 22
   },
   {
     team_id: 3,
-    player_id: 8473575
-  }  
+    player_id: 29
+  },
+  { team_id: 2, player_id: 22 }
 ]
 
 const seedTeamPlayers = () => TeamPlayers.bulkCreate(TPData);

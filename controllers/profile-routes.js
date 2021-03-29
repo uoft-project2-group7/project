@@ -7,7 +7,8 @@ const { Player, Team, TeamPlayers, User } = require('../models');
 router.get('/', (req, res) => {
   console.log('======================');
   Player.findAll({
-    attributes: [      
+    attributes: [
+      'id',
       'nhl_id',
       'full_name',
       'position'
