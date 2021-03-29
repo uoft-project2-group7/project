@@ -53,7 +53,7 @@ How a user's team is created:
 ![Create Team Name](./public/images/Dangles.gif)
 
 
-Leaderboard page displays team scores in order from most to least.
+Leaderboard page displays team scores in order from most points to least.
 
 ![Leader Board](./public/images/leaderboard.png)
 
