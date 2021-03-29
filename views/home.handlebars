@@ -1,8 +1,7 @@
 {{#if loggedIn}}
 <div class="content-block" id="warning-no-team">
     <p>
-        Before you start playing and seeing where you rank, make sure to visit your <a href="/profile">Profile Page</a>
-        to
+        Before you start playing and seeing where you rank, make sure to visit your <a href="/profile">Profile Page</a> to
         select the players that will score you big this fantasy season!
     </p>
 </div>
@@ -20,17 +19,25 @@
         {{/each}}
     </div>
     <div class="sidebar">
+        <h2 style="text-align: center;" class="card-title" >Today's Games</h2>
+        <ul>
+            <li class="future"><span>Flames</span> @  <span>Senators</span></li>
+            <br>
+            <li class="future"><span>Wild</span> @  <span>Ducks</span></li>
+            <br>
+            <li class="future">Sabres @  Penguins</li>
+            <br>
+            <li class="future">Kings  @  Sharks</li>
+            <br>
+            <li class="future">Jets   @  Canuks</li>
+            <br>
+            <li class="future">Oilers @  Canadiens</li>
 
-        <div>
-            <h2 style="text-align: center;" class="card-title">Today's Games</h2>
-            <h4 id="time"></h4>
-        </div>
+        </ul>
 
-        <div id="game-card" class="future">
-        </div>
+
     </div>
 </div>
+
 <script src="/javascript/home.js" async=false defer=false></script>
 <script src="/javascript/homeMath.js"></script>
-<script src="/javascript/player-stats.js"></script>
-<script src="/javascript/schedule.js"></script>
