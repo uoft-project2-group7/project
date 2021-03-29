@@ -76,6 +76,33 @@ main {
   border: 1px solid var(--secondary-colour);
   border-radius: 15px;
   box-shadow: 1px 1px var(--secondary-colour);
+<<<<<<< HEAD
+=======
+  transition: 0.5s;
+  align-items: center;
+}
+
+.future {
+  font-family: 'Architects Daughter', cursive;
+}
+
+#currentDay{
+  font-family: 'Architects Daughter', cursive;
+  color: var(--primary-colour);
+  border-bottom: 1px solid var(--primary-colour);
+}
+
+#list_id {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  margin-top: 2rem;
+  border: 1px solid var(--secondary-colour);
+  border-radius: 15px;
+  box-shadow: 1px 1px var(--secondary-colour);
+  transition: 0.5s;
+  align-items: center;
+>>>>>>> b4a8b1b7bf0fed6c7a8e732e818e94cd2b5d703a
 }
 
   .future {
@@ -111,14 +138,8 @@ main {
 }
 
 .card-score {
-<<<<<<< HEAD
   font-size: 1.5rem;
   color: var(--primary-colour);
-=======
-    visibility: hidden;
-    font-size: 1.5rem;
-    color: var(--primary-colour);
->>>>>>> 61b20a44fb2c937e0b8c21d8904995daddb4035c
 }
 
 /* Profile - Create a Team */
@@ -230,4 +251,3 @@ footer {
   background-color: var(--primary-colour);
   color: white;
 }
-
