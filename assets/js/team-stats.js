@@ -1,3 +1,5 @@
+// const { format } = require("sequelize/types/lib/utils");
+
 var getNhlteams = function () {
 const apiUrl = "https://statsapi.web.nhl.com/api/v1/teams/";
 fetch(apiUrl).then(function (response) {
@@ -33,18 +35,7 @@ fetch(apiUrl).then(function (response) {
       // homeTeamEl.innerHTML = awayTeam + " " + scoreAway + "  " + "@" + "  " + scoreHome + "  " + homeTeam;
       // let gamesTonight = document.querySelector('#game-card');
       // gamesTonight.appendChild(homeTeamEl);
-
-
-
-
-
-
-
-
     }
-
-
-
 
   })
 
@@ -52,12 +43,14 @@ fetch(apiUrl).then(function (response) {
     console.log(err);
   })
 
- 
-
-
-
 }
 
+const now = new Date();
+const date1 = new Intl.DateTimeFormat('en-US',{ dateStyle: 'full'}).format();
+console.log(date1);
+
+let todayDate = document.getElementById('game-card');
+todayDate.innerText = date1;
 
 
 getNhlteams();
