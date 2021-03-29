@@ -55,7 +55,8 @@ const postData = () => {
             "left_wing": selection[3],
             "dman1": selection[4],
             "dman2": selection[5],
-            "goalie": selection[6]
+            "goalie": selection[6],
+            "team_created": true
         }),
         headers: { 'Content-Type': 'application/json' }    
     })

@@ -12,6 +12,12 @@ router.get('/', (req, res) => {
       'full_name',
       'position'
     ],
+    include: [
+      {
+        model: User,
+        attributes: ['team_created']
+      }
+    ]
   })
     .then(dbPlayerData => {
       let C = dbPlayerData.filter(i => 'C'.includes(i.position)).map(x => x.get({ plain: true }));
@@ -26,7 +32,8 @@ router.get('/', (req, res) => {
         LW,
         D,
         G,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        team_created
       });
     })
     .catch(err => {
