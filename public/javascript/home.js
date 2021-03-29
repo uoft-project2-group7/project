@@ -94,15 +94,15 @@ const doFirst = async () => {
                                 getData();
                             }
 
-                            let cPoints = players.find(obj => { return obj.nhl_id === team[i].center });
+                            let cPoints = players.find(obj => { return obj.id === team[i].center });
                             getPoints(cPoints.nhl_id);
-                            let rwPoints = players.find(obj => { return obj.nhl_id === team[i].right_wing });
+                            let rwPoints = players.find(obj => { return obj.id === team[i].right_wing });
                             getPoints(rwPoints.nhl_id);
-                            let lwPoints = players.find(obj => { return obj.nhl_id === team[i].left_wing });
+                            let lwPoints = players.find(obj => { return obj.id === team[i].left_wing });
                             getPoints(lwPoints.nhl_id);
-                            let d1Points = players.find(obj => { return obj.nhl_id === team[i].dman1 });
+                            let d1Points = players.find(obj => { return obj.id === team[i].dman1 });
                             getPoints(d1Points.nhl_id);
-                            let d2Points = players.find(obj => { return obj.nhl_id === team[i].dman2 });
+                            let d2Points = players.find(obj => { return obj.id === team[i].dman2 });
                             getPoints(d2Points.nhl_id);
 
 

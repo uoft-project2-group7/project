@@ -22,7 +22,7 @@ TeamPlayers.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'player',
-        key: 'nhl_id'
+        key: 'id'
       }
     }
   },

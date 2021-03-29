@@ -9,14 +9,14 @@ router.get('/', (req, res) => {
   console.log('======================');
   Player.findAll({
     attributes: [
-      'nhl_id',
+      'id',
       'full_name',
       'position'
     ],
     include: [
       {
         model: Player,
-        attributes: ['nhl_id', 'full_name', 'position', 'user_id']
+        attributes: ['id', 'full_name', 'position', 'user_id']
       }
     ]
     
@@ -39,17 +39,17 @@ router.get('/', (req, res) => {
 router.get('/player/:id', (req, res) => {
   Post.findOne({
     where: {
-      nhl_id: req.params.id
+      id: req.params.id
     },
     attributes: [
-      'nhl_id',
+      'id',
       'full_name',
       'position'
     ],
     include: [
       {
         model: Player,
-        attributes: ['nhl_id', 'full_name', 'position', 'user_id']
+        attributes: ['id', 'full_name', 'position', 'user_id']
       }
     ]
   })
