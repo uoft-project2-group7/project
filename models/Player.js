@@ -5,16 +5,12 @@ class Player extends Model {}
 
 Player.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
     //NHL_ID is the player identifier used to by the NHL API to pull player info
     nhl_id: {
       type: DataTypes.INTEGER,
-      allowNull: false      
+      allowNull: false,
+      primaryKey: true
+            
     },
     full_name: {
       type: DataTypes.STRING,
@@ -23,6 +19,26 @@ Player.init(
     position: {
       type: DataTypes.STRING(3),
       allowNull: false
+    },
+    stat1: { //for players this will represent goals, for a goalie it will be wins
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    stat2: { //for players this is assists, for a goalie it saves
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    stat3: { //for a player this will always be zero and never referenced, for a goalie it is goals against
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    stat4: { //for a player always zero and never referenced, for a goalie this is shutouts
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
     }   
   },
   {

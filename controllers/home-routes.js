@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
       },
       {
         model: Player,
-        through: TeamPlayers,
+        //through: TeamPlayers,
         attributes: ["nhl_id", "full_name", "position"],
       }
     ]
@@ -40,7 +40,7 @@ router.get('/', (req, res) => {
 
 // get six random teams
 router.get('/team/:id', (req, res) => {
-  Post.findOne({
+  Team.findOne({
     where: {
       id: req.params.id
     },
@@ -83,6 +83,33 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.put('/player/:id', (req, res) => {
+  Player.update(
+    {
+      stat1: req.body.stat1,
+      stat2: req.body.stat2,
+      stat3: req.body.stat3,
+      stat4: req.body.stat4
+    },
+    {
+      where: {
+        nhl_id: req.params.id
+      }
+    }
+  )
+  .then(dbPlayerData => {
+    if (!dbPlayerData) {
+      res.status(404).json({ message: 'No player found with this id' });
+      return;
+    }
+    res.json(dbPlayerData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
+})
 
 
 module.exports = router;
