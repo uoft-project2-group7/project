@@ -55,5 +55,4 @@ var getNhlSchedule = function () {
   });
 }
 
-
 getNhlSchedule();
