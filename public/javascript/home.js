@@ -1,166 +1,70 @@
-// const fetch = require('node-fetch');
+let result;
+let cards = document.getElementsByClassName('card').length;
 
-// module.exports = { 
-//   playerStats: playerdata => {
-//     let apiUrl = 'https://statsapi.web.nhl.com/api/v1/people/'+ playerdata +'/stats?stats=statsSingleSeason&season=20202021';
-//     fetch(apiUrl).then(function(response) {
-//       response.json().then(function(data) {
-//         //console.log(data.stats[0].splits[0].stat);
+let totalGoals;
+let totalAssists;
 
-//         let goals = data.stats[0].splits[0].stat.goals;
-//         let assists = data.stats[0].splits[0].stat.assists;
-//         let stats = `G: ${goals} A: ${assists}`;
-
-//         console.log(stats);
-//         return `this text is working`;
-//       })
-//     }) 
-//   }
-
-// }
-
-
-// for (let i; i < 6; i++) {
-//     playerStats: playerdata => {
-//         let apiUrl = 'https://statsapi.web.nhl.com/api/v1/people/' + playerdata + '/stats?stats=statsSingleSeason&season=20202021';
-//     }
-
-// let dataArray;
-
-// const getData = () => {
-//     dataArray = fetch('/api/teams', {
-//         method: 'get',
-//         body: JSON.stringify({
-//             id
-//         }),
-//         headers: { 'Content-Type': 'application/json' }
-//     });
-// }
-
-// getData();
-
-
-
-
-
-
-// for (let i; i < 6; i++) {
-//     playerStats: playerdata => {
-//         let apiUrl = 'https://statsapi.web.nhl.com/api/v1/people/' + playerdata + '/stats?stats=statsSingleSeason&season=20202021';
-//     }
-
-//     let dataArray;
-
-//     const getData = () => {
-//         dataArray = fetch('/api/teams', {
-//             method: 'get',
-//             body: JSON.stringify({
-//                 id
-//             }),
-//             headers: { 'Content-Type': 'application/json' }
-//         });
-//     }
-
-//     getData();
-
-
-
-
-
-const doFirst = async () => {
-    return await fetch('/api/teams').then(function (response) {
-        response.json().then(function (team) {
-            for (let i = 0; i < team.length; i++) {
-                const values = async () => {
-
-                    await fetch('/api/players').then(function (response) {
-                        response.json().then(function (players) {
-                            // let totalGoals = [];
-                            // let totalAssists = [];
-                            const getPoints = (nhlId) => {
-                                let apiUrl = 'https://statsapi.web.nhl.com/api/v1/people/' + nhlId + '/stats?stats=statsSingleSeason&season=20202021';
-                                const getData = async () => {
-                                    await fetch(apiUrl).then(function (response) {
-                                        response.json().then(function (data) {
-                                            let currentGoals = Number(document.getElementsByClassName('stats-goals')[i].innerHTML);
-                                            let currentAssists = Number(document.getElementsByClassName('stats-assists')[i].innerHTML);
-                                            currentGoals += data.stats[0].splits[0].stat.goals;
-                                            currentAssists += data.stats[0].splits[0].stat.assists;
-                                            document.getElementsByClassName('stats-goals')[i].innerHTML = currentGoals;
-                                            document.getElementsByClassName('stats-assists')[i].innerHTML = currentAssists;
-                                        })
-                                    })
-                                }
-                                getData();
-                            }
-
-                            let cPoints = players.find(obj => { return obj.nhl_id === team[i].center });
-                            getPoints(cPoints.nhl_id);
-                            let rwPoints = players.find(obj => { return obj.nhl_id === team[i].right_wing });
-                            getPoints(rwPoints.nhl_id);
-                            let lwPoints = players.find(obj => { return obj.nhl_id === team[i].left_wing });
-                            getPoints(lwPoints.nhl_id);
-                            let d1Points = players.find(obj => { return obj.nhl_id === team[i].dman1 });
-                            getPoints(d1Points.nhl_id);
-                            let d2Points = players.find(obj => { return obj.nhl_id === team[i].dman2 });
-                            getPoints(d2Points.nhl_id);
-
-
-                            // console.log(totalGoals);
-                            // console.log(totalAssists);
-                            // return [totalGoals, totalAssists];
-                        })
-                    })
-                }
-                values();
-            }
+const getPoints = async (nhlId) => {
+    return new Promise(resolve => {
+        let apiUrl = 'https://statsapi.web.nhl.com/api/v1/people/' + nhlId + '/stats?stats=statsSingleSeason&season=20202021';
+        fetch(apiUrl).then((response) => {
+            response.json().then((data) => {
+                let currentGoals = data.stats[0].splits[0].stat.goals;
+                let currentAssists = data.stats[0].splits[0].stat.assists;
+                resolve([currentGoals, currentAssists]);
+            })
         })
     })
-   
 }
 
-// const doSecond = () => {
-//     for (let i = 0; i < document.getElementsByClassName('stats-goals').length; i++) {
-//         console.log(Number(document.getElementsByClassName('stats-goals')[i].innerHTML));
-//         const addScore = () => {
-//             let goalMath = Number(document.getElementsByClassName('stats-goals')[i].innerHTML) * 3;
-//             let assistMath = Number(document.getElementsByClassName('stats-assists')[i].innerHTML) * 2;
-//             return goalMath + assistMath;
-//         }
-//         document.getElementsByClassName('card-score')[i].innerHTML = addScore();
-//     }
+const doMath = async (team, i) => {
+    return new Promise(async resolve => {
+        await fetch('/api/players').then((response) => {
+            let returnedScore;
+            let x = 0;
+            let y = 0;
+            response.json().then(async (players) => {
+                let cPoints = team[i].center;
+                returnedScore = await getPoints(cPoints);
+                x += returnedScore[0];
+                y += returnedScore[1];
 
-// }
+                let rwPoints = team[i].right_wing;
+                returnedScore = await getPoints(rwPoints);
+                x += returnedScore[0];
+                y += returnedScore[1];
 
-doFirst();
+                let lwPoints = team[i].left_wing;
+                returnedScore = await getPoints(lwPoints);
+                x += returnedScore[0];
+                y += returnedScore[1];
 
-// console.log(result[0]);
-// Promise.all(totalGoals).then((values) => {
-//     // console.log(values);
-// })
-// for (let x = 0; x < totalGoals.length / 5; x++) {
-//     let toPrintGoals = [];
-//     let toPrintAssists = [];
-//     for (let y = 0; y < 5; y++) {
-//         toPrintGoals.push(totalGoals[0]);
-//         toPrintAssists.push(totalAssists[0]);
-//         totalGoals.shift;
-//         totalAssists.shift;
-//     }
-//     toPrintGoals = toPrintGoals.reduce((a, b) => a + b, 0);
-//     toPrintAssists = toPrintAssists.reduce((a, b) => a + b, 0);
-//     document.getElementsByClassName('stats-goals')[x].textContent.value = toPrintGoals;
-//     document.getElementsByClassName('stats-assists')[x].textContent.value = toPrintAssists;
-// }
+                let d1Points = team[i].dman1;
+                returnedScore = await getPoints(d1Points);
+                x += returnedScore[0];
+                y += returnedScore[1];
 
+                let d2Points = team[i].dman2;
+                returnedScore = await getPoints(d2Points);
+                x += returnedScore[0];
+                y += returnedScore[1];
+                return resolve([x, y]);
+            });
+        });
+    });
+}
 
+const asyncCall = async () => {
+    await fetch('/api/teams').then((response) => {
+        response.json().then(async (team) => {
+            for (let i = 0; i < cards; i++) {
+                result = await doMath(team, i);
+                document.getElementsByClassName('stats-goals')[i].innerText = result[0];
+                document.getElementsByClassName('stats-assists')[i].innerText = result[1];
+                document.getElementsByClassName('card-score')[i].innerText = result[0] * 3 + result[1] * 2;
+            }
+        });
+    });
+}
 
-
-// fetch('/api/teams').then(function (response) {
-//     response.json().then(function (players) {
-//         //console.log(data.stats[0].splits[0].stat);
-
-//         // let goals = data.stats[0].splits[0].stat.goals;
-//         console.log(players);
-//     })
-// })
+asyncCall();

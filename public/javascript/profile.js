@@ -57,10 +57,17 @@ const postData = () => {
             "dman2": selection[5],
             "goalie": selection[6]
         }),
-        headers: { 'Content-Type': 'application/json' }    
+        headers: { 'Content-Type': 'application/json' }
     })
-    
-    
+
+    fetch('/api/user', {
+        method: 'post',
+        body: JSON.stringify({
+            "team_created": true
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    })
+
     document.location.replace('/');
 }
 

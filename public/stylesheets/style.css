@@ -94,8 +94,38 @@ main {
   border: 1px solid var(--secondary-colour);
   border-radius: 15px;
   box-shadow: 1px 1px var(--secondary-colour);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   transition: 0.5s;
   align-items: center;
+}
+
+.future {
+  font-family: 'Architects Daughter', cursive;
+}
+
+#currentDay{
+  font-family: 'Architects Daughter', cursive;
+  color: var(--primary-colour);
+  border-bottom: 1px solid var(--primary-colour);
+}
+
+#list_id {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  margin-top: 2rem;
+  border: 1px solid var(--secondary-colour);
+  border-radius: 15px;
+  box-shadow: 1px 1px var(--secondary-colour);
+  transition: 0.5s;
+  align-items: center;
+>>>>>>> b4a8b1b7bf0fed6c7a8e732e818e94cd2b5d703a
+=======
+  transition: 0.5s;
+  align-items: center;
+>>>>>>> main
 }
 
 #game-card {
@@ -131,7 +161,10 @@ main {
 }
 
 .card-score {
+<<<<<<< HEAD
+=======
   visibility: hidden;
+>>>>>>> main
   font-size: 1.5rem;
   color: var(--primary-colour);
 }
@@ -241,4 +274,8 @@ footer {
   text-align: center;
   background-color: var(--primary-colour);
   color: white;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

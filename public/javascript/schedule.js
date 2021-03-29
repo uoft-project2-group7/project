@@ -1,4 +1,12 @@
-// Ge the API for the NHL Team stats
+// Add todays date
+const now = new Date();
+const date1 = new Intl.DateTimeFormat('en-US',{ dateStyle: 'full'}).format();
+console.log(date1);
+
+let todayDate = document.getElementById('currentDay');
+todayDate.innerText = date1;
+
+// Get the api for the Nhl schedule
 
 var getNhlSchedule = function () {
   const apiUrl = "https://statsapi.web.nhl.com/api/v1/schedule";

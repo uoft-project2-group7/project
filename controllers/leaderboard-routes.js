@@ -3,7 +3,7 @@ const { Player, Team, TeamPlayers, User } = require("../models");
 
 router.get("/", (req, res) => {
   res.render("leaderboard", {
-    loggedIn: true, // change to verify is user is logged in
+    loggedIn: req.session.loggedIn
   });
 });
 
@@ -34,7 +34,7 @@ router.get("/", (req, res) => {
     .then((dbPostData) => {
         // serialize data before passing to template
         const teamScores = dbPostData.map((scores) => scores.get({ plain: true }));
-        res.render("leaderboard", { teamScores, loggedIn: true });
+        res.render("leaderboard", { teamScores, loggedIn: req.session.loggedIn });
       })
       .catch((err) => {
         console.log(err);
