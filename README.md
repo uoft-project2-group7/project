@@ -77,4 +77,4 @@ Johnny Wu,
 Kris Pennimpede,
 Rajendra Dhanraj,
 Brad Spurrell,
-Terrence Chan,
+Terrence Chan
